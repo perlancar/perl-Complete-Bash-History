@@ -69,7 +69,7 @@ _
         max_hist_lines => {
             summary => 'Stop searching after this amount of history lines',
             schema => ['int*'],
-            default => 5000,
+            default => 3000,
             description => <<'_',
 
 -1 means unlimited (search all lines in the file).
@@ -151,7 +151,7 @@ sub complete_cmdline_from_hist {
         next unless @$hwords;
 
         # currently doesn't yet handle: ( foo ) ..., piping |, multiple command
-        # using semicolon, etc. in general we need a more sophisticated parser
+        # using semicolon, etc. basically we need a more sophisticated parser
         # than Complete::Bash::parse_cmdline() if we want to handle these.
 
         # strip ad-hoc environment setting, e.g.: DEBUG=1 ANOTHER="foo bar" cmd
