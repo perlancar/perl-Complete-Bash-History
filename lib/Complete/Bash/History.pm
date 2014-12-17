@@ -201,7 +201,7 @@ sub complete_cmdline_from_hist {
 }
 
 1;
-#ABSTRACT: Complete from bash history
+#ABSTRACT:
 
 =head1 SYNOPSIS
 
