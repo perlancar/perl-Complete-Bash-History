@@ -150,9 +150,14 @@ sub complete_cmdline_from_hist {
         my ($hwords, $hcword) = @{ Complete::Bash::parse_cmdline($line, 0) };
         next unless @$hwords;
 
-        # currently doesn't yet handle: ( foo ) ..., piping |, multiple command
-        # using semicolon, etc. basically we need a more sophisticated parser
-        # than Complete::Bash::parse_cmdline() if we want to handle these.
+        # COMP_LINE (and COMP_WORDS) is provided by bash and does not include
+        # multiple commands (e.g. in '( foo; bar 1 2<tab> )' or 'foo -1 2 | bar
+        # 1 2<tab>', bash already only supplies us with 'bash 1 2' instead of
+        # the full command-line. This is different when we try to parse the full
+        # command-line from history. Complete::Bash::parse_cmdline() is not
+        # sophisticated enough to understand full bash syntax. So currently we
+        # don't support multiple/complex statements. We'll need a more
+        # proper/feature-complete bash parser for that.
 
         # strip ad-hoc environment setting, e.g.: DEBUG=1 ANOTHER="foo bar" cmd
         while (1) {
