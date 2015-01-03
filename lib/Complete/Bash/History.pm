@@ -216,14 +216,6 @@ sub complete_cmdline_from_hist {
 =head1 DESCRIPTION
 
 
-=head1 TODO
-
-Option to search only for the last N hours/days of history (using timestamp in
-bash history).
-
-Find recent subcommands? e.g. git {status,log,commit}
-
-
 =head1 SEE ALSO
 
 =cut
