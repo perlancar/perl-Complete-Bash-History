@@ -215,7 +215,4 @@ sub complete_cmdline_from_hist {
 
 =head1 DESCRIPTION
 
-
-=head1 SEE ALSO
-
 =cut
