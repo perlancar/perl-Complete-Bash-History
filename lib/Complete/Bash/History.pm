@@ -106,7 +106,7 @@ sub complete_cmdline_from_hist {
 
     my %args = @_;
 
-    my $path = $args{path} // "$ENV{HOME}/.bash_history";
+    my $path = $args{path} // $ENV{HISTFILE} // "$ENV{HOME}/.bash_history";
     my $fh = File::ReadBackwards->new($path) or return [];
 
     my $max_hist_lines = $args{max_hist_lines} // 3000;
