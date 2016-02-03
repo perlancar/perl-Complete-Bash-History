@@ -91,7 +91,7 @@ sub parse_options {
     if ($args{words}) {
         ($words, $cword) = ($args{words}, $args{cword});
     } else {
-        ($words, $cword) = @{parse_cmdline($args{cmdline}, $args{point})};
+        ($words, $cword) = @{parse_cmdline($args{cmdline}, $args{point}, {truncate_current_word=>1})};
     }
 
     ($words, $cword) = @{join_wordbreak_words($words, $cword)};
