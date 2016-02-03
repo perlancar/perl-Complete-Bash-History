@@ -94,6 +94,8 @@ sub parse_options {
         ($words, $cword) = @{parse_cmdline($args{cmdline}, $args{point})};
     }
 
+    #use DD; dd [$words, $cword];
+
     my @types;
     my %opts;
     my @argv;
@@ -255,6 +257,8 @@ sub complete_cmdline_from_hist {
         point   => $args{point} // $ENV{COMP_POINT} // length($cl),
     );
     $cmd = $res->{words}[0];
+    $cmd =~ s!.+/!!;
+
     my $which;
     if ($res->{word_type} eq 'opt_val') {
         $which = 'opt_val';
@@ -271,6 +275,8 @@ sub complete_cmdline_from_hist {
     } else {
         return [];
     }
+
+    #use DD; dd {which=>$which, pos=>$pos, word=>$word};
 
     my %res;
     my $num_hist_lines = 0;
@@ -306,6 +312,8 @@ sub complete_cmdline_from_hist {
 
         # get the first word as command name
         my $hcmd = $hwords->[0];
+        $hcmd =~ s!.+/!!;
+        #say "D:hcmd=$hcmd, cmd=$cmd";
         next unless $hcmd eq $cmd;
 
         my $hpo = parse_options(words=>$hwords, cword=>$hcword);
