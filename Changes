@@ -1,5 +1,16 @@
 Revision history for Complete-Bash-History
 
+0.05    2016-02-03 (PERLANCAR)
+
+	- Adjust to Complete::Bash 0.27.
+
+	- Move parse_options() from Complete-Bash.
+
+	- Strip path from command name.
+
+	- Observe HISTFILE before defaulting to HOME/.bash_history.
+
+
 0.04    2015-09-09 (PERLANCAR)
 
 	- No functional changes.
