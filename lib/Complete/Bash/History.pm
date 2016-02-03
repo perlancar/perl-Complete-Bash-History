@@ -13,7 +13,7 @@ our @EXPORT_OK = qw(
                        complete_cmdline_from_hist
                );
 
-use Complete::Bash qw(parse_cmdline);
+use Complete::Bash qw(parse_cmdline join_wordbreak_words);
 
 our %SPEC;
 
@@ -93,6 +93,8 @@ sub parse_options {
     } else {
         ($words, $cword) = @{parse_cmdline($args{cmdline}, $args{point})};
     }
+
+    ($words, $cword) = @{join_wordbreak_words($words, $cword)};
 
     #use DD; dd [$words, $cword];
 
