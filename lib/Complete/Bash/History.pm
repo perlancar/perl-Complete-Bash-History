@@ -27,9 +27,9 @@ $SPEC{parse_options} = {
         'more or less like Getopt::Long',
     description => <<'_',
 
-Parse command-line into words using `Complete::Bash`'s `parse_cmdline()` then
+Parse command-line into words using <pm:Complete::Bash>'s `parse_cmdline()` then
 separate options and arguments. Since this routine does not accept
-`Getopt::Long` (this routine is meant to be a generic option parsing of
+<pm:Getopt::Long> (this routine is meant to be a generic option parsing of
 command-lines), it uses a few simple rules to server the common cases:
 
 * After `--`, the rest of the words are arguments (just like Getopt::Long).
