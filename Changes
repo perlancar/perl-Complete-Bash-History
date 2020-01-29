@@ -1,3 +1,10 @@
+0.060   2020-01-29  Released-By: PERLANCAR; Urgency: medium
+
+	- No functional changes.
+
+	- [test] Update tests.
+
+
 0.05    2016-02-03  Released-By: PERLANCAR
 
 	- Adjust to Complete::Bash 0.27.
